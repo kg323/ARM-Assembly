@@ -1,0 +1,138 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             lab7, CODE, READONLY
+    2 00000000         
+    3 00000000         Reset_Handler
+    4 00000000         
+    5 00000000 0000006F 
+                       CHAR    EQU              0X6F        ;ASCII number for "
+                                                            o"
+    6 00000000 E59F0060        LDR              R0, =string ;loads address of s
+                                                            tring into r0
+    7 00000004 E3A0206F        MOV              R2, #CHAR   ;moves number of ch
+                                                            ar into r2 for the 
+                                                            count
+    8 00000008 E3A03000        MOV              R3, #0      ;sets r3 to 0 for t
+                                                            he counter
+    9 0000000C E5D01000        LDRB             R1, [R0]    ;loads r0 into r1 (
+                                                            first byte)
+   10 00000010 E1510002        CMP              R1, R2      ;compares r2 and r1
+                                                             (to see if first b
+                                                            yte equals char)
+   11 00000014 02833001        ADDEQ            R3, #1      ;adds 1 to counter 
+                                                            if true
+   12 00000018         
+   13 00000018 E5F01001 
+                       loop    LDRB             R1, [R0, #1]! ;shifts by 1 byte
+                                                             and stores into r1
+                                                            
+   14 0000001C         
+   15 0000001C E1510002        CMP              R1, R2      ;checks if true
+   16 00000020 02833001        ADDEQ            R3, #1      ;increments if true
+                                                            
+   17 00000024 E3510000        CMP              R1, #0      ;checks if r1 is 0,
+                                                             which means no mor
+                                                            e bytes
+   18 00000028 1AFFFFFA        BNE              loop        ;if not equal then 
+                                                            branches to loop
+   19 0000002C EAFFFFFE 
+                       stop    B                stop
+   20 00000030         
+   21 00000030 49 66 20 
+              79 6F 75 
+              20 61 72 
+              65 20 67 
+              6F 69 6E 
+              67 20 74 
+              6F 20 70 
+              61 73 73 
+              2C 20 79 
+              6F 75 20 
+              67 6F 74 
+              74 61 20 
+              6C 6F 76 
+              65 20 74 
+              68 69 73 
+              20 63 6C 
+              61 73 73 
+              21 00    string  DCB              "If you are going to pass, you 
+gotta love this class!", 0
+   22 00000065 00 00 00        ALIGN
+   23 00000068                 END
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+              00000000 
+Command Line: --debug --xref --apcs=interwork --depend=.\lab7.d -o.\lab7.o -IC:
+\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --pred
+efine="__EVAL SETA 1" --list=.\lab7.lst lab7.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+Reset_Handler 00000000
+
+Symbol: Reset_Handler
+   Definitions
+      At line 3 in file lab7.s
+   Uses
+      None
+Comment: Reset_Handler unused
+lab7 00000000
+
+Symbol: lab7
+   Definitions
+      At line 1 in file lab7.s
+   Uses
+      None
+Comment: lab7 unused
+loop 00000018
+
+Symbol: loop
+   Definitions
+      At line 13 in file lab7.s
+   Uses
+      At line 18 in file lab7.s
+Comment: loop used once
+stop 0000002C
+
+Symbol: stop
+   Definitions
+      At line 19 in file lab7.s
+   Uses
+      At line 19 in file lab7.s
+Comment: stop used once
+string 00000030
+
+Symbol: string
+   Definitions
+      At line 21 in file lab7.s
+   Uses
+      At line 6 in file lab7.s
+Comment: string used once
+5 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Absolute symbols
+
+CHAR 0000006F
+
+Symbol: CHAR
+   Definitions
+      At line 5 in file lab7.s
+   Uses
+      At line 7 in file lab7.s
+Comment: CHAR used once
+1 symbol
+339 symbols in table

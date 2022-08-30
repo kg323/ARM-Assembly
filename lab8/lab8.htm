@@ -1,0 +1,49 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html><head>
+<title>Static Call Graph - [.\lab8.axf]</title></head>
+<body><HR>
+<H1>Static Call Graph for image .\lab8.axf</H1><HR>
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Wed Aug 19 14:08:52 2020
+<BR><P>
+<H3>Maximum Stack Usage =          0 bytes + Unknown(Functions without stacksize)</H3><H3>
+Call chain for Maximum Stack Depth:</H3>
+
+<P>
+<H3>
+Functions with no stack information
+</H3><UL>
+ <LI><a href="#[0]">user_code</a>
+ <LI><a href="#[1]">LED_Setup</a>
+ <LI><a href="#[2]">LED_ON</a>
+ <LI><a href="#[3]">delay</a>
+</UL>
+</UL>
+<P>
+<H3>
+Global Symbols
+</H3>
+<P><STRONG><a name="[0]"></a>user_code</STRONG> (ARM, 0 bytes, Stack size unknown bytes, lab8.o(lab8), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Setup
+<LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_ON
+</UL>
+
+<P><STRONG><a name="[1]"></a>LED_Setup</STRONG> (ARM, 0 bytes, Stack size unknown bytes, lab8_1.o(lab8_1), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_code
+</UL>
+
+<P><STRONG><a name="[2]"></a>LED_ON</STRONG> (ARM, 0 bytes, Stack size unknown bytes, lab8_2.o(lab8_2), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay
+</UL>
+<BR>[Called By]<UL><LI><a href="#[0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_code
+</UL>
+
+<P><STRONG><a name="[3]"></a>delay</STRONG> (ARM, 0 bytes, Stack size unknown bytes, lab8_4.o(lab8_4), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_ON
+</UL>
+<P>
+<H3>
+Local Symbols
+</H3><P>
+<H3>
+Undefined Global Symbols
+</H3><HR></body></html>

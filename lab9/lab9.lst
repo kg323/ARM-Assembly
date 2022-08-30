@@ -1,0 +1,101 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 IMPORT           user_code
+    2 00000000         ;AREA lab9, CODE, READONLY
+    3 00000000         ;ENTRY
+    4 00000000         
+    5 00000000         
+    6 00000000         ;BL user_code
+    7 00000000         
+    8 00000000         
+    9 00000000         ;num   EQU    10                      ; set number of wo
+                       rds to be copied
+   10 00000000         ;; mark the first instruction called
+   11 00000000         ;start
+   12 00000000         ;LDR    R0, =Set0             ; r0 = pointer to source b
+                       lock
+   13 00000000         ;LDR    R1, =data             ; r1 = pointer to destinat
+                       ion block
+   14 00000000         ;MOV    R2, #num              ; r2 = number to copy
+   15 00000000         ;MOV    sp, #0x400            ;sp
+   16 00000000         ;blockcopy
+   17 00000000         ;MOVS   R3,R2, LSR #3         ; Number of eight word mul
+                       tiples
+   18 00000000         ;BEQ    copywords             ; Fewer than eight words t
+                       o move?
+   19 00000000         ;PUSH   {R4-R11}              ; Save some working regist
+                       ers
+   20 00000000         ;copy
+   21 00000000         ;LDM    R0!, {R4-R9,R11}      ; Load 
+   22 00000000         ;STM    R1!, {R4-R9, R11}     ; store
+   23 00000000         ;SUBS   R3, R3, #1            ;Decrement the counter
+   24 00000000         ;BNE    copy                 ;copy m
+   25 00000000         ;POP    {R4-R9, R11}          ;make space for these
+   26 00000000         
+   27 00000000         ;copywords 
+   28 00000000         ;ANDS   R2, R2, #7            ; Number of odd words to c
+                       opy
+   29 00000000         ;BEQ    stop                  ;done
+   30 00000000         ;wordcopy 
+   31 00000000         ;LDR    R3, [R0], #4          ; Load a word from the sou
+                       rce and
+   32 00000000         ;STR    R3, [R1], #4          ; store it to the destinat
+                       ion
+   33 00000000         ;SUBS   R2, R2, #1            ; Decrement the counter
+   34 00000000         ;BNE    wordcopy              ; ... copy more
+   35 00000000         ;stop   B stop
+   36 00000000         
+   37 00000000         ;data  DCD -100, -43, 5, 20, 5, -15, -60, -148, -268, -3
+                       40 
+   38 00000000         
+   39 00000000         ;Set0 DCD -95, -39, 1, 20, 7, -15, -55, -148, -266, -340
+                         
+   40 00000000         ;Set1 DCD -98, -38, 2, 20, 9, -13, -57, -152, -264, -330
+                         
+   41 00000000         ;Set2 DCD -105, -40, 5, 21, 6, -14, -63, -150, -260, -33
+                       3  
+   42 00000000         ;Set3 DCD -106, -41, 5, 15, 6, -12, -66, -141, -261, -33
+                       1  
+   43 00000000         ;Set4 DCD -101, -42, 4, 27, 8, -19, -69, -139, -262, -34
+                       4  
+   44 00000000         ;Set5 DCD -99, -43, 5, 20, 4, -17, -61, -144, -269, -341
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+                         
+   45 00000000         ;Set6 DCD -102, -49, 7, 24, 4, -16, -60, -145, -270, -34
+                       8  
+   46 00000000         ;Set7 DCD -95, -39, 5, 22, 3, -15, -62, -148, -272, -330
+                         
+   47 00000000         ;Set8 DCD -96, -35, 9, 19, 5, -14, -58, -149, -272, -335
+                         
+   48 00000000         ;Set9 DCD -100, -43, 6, 18, 5, -14, -55, -140, -274, -34
+                       0 
+   49 00000000         ;END
+                       
+Command Line: --debug --xref --apcs=interwork --depend=.\lab9.d -o.\lab9.o -IC:
+\Keil\ARM\RV31\INC -IC:\Keil\ARM\CMSIS\Include -IC:\Keil\ARM\Inc\Philips --pred
+efine="__EVAL SETA 1" --list=.\lab9.lst lab9.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+user_code 00000000
+
+Symbol: user_code
+   Definitions
+      At line 1 in file lab9.s
+   Uses
+      None
+Comment: user_code unused
+1 symbol
+332 symbols in table

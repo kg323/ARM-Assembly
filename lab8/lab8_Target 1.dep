@@ -1,0 +1,5 @@
+Dependencies for Project 'lab8', Target 'Target 1': (DO NOT MODIFY !)
+F (.\lab8.s)(0x5F3D8D5E)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\lab8.lst --xref -o .\lab8.o --depend .\lab8.d)
+F (.\lab8_1.s)(0x5F3D8DF9)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\lab8_1.lst --xref -o .\lab8_1.o --depend .\lab8_1.d)
+F (.\lab8_2.s)(0x5F3D94E4)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\lab8_2.lst --xref -o .\lab8_2.o --depend .\lab8_2.d)
+F (.\lab8_4.s)(0x5F3D94C3)(--cpu ARM7TDMI --pd "__EVAL SETA 1" -g --apcs=interwork -I C:\Keil\ARM\RV31\INC-I C:\Keil\ARM\CMSIS\Include-I C:\Keil\ARM\Inc\Philips--list .\lab8_4.lst --xref -o .\lab8_4.o --depend .\lab8_4.d)
